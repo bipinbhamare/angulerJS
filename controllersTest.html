@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Angular JS Controller </title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+ </head>
+<body>
+<h2>Second COntroller application</h2>
+
+<div ng-app="mainApp" ng-controller="studentController">
+
+First Name <input type="text" placeholder="Enter first Name" ng-model="student.firstName"> <br><br>
+last Name <input type="text" placeholder="Enter last Name" ng-model="student.lastName"> <br><br>
+	
+	you full name is {{student.fullName()}}
+</div>
+<script type="text/javascript">
+	var mainApp=angular.module("mainApp",[]);
+	mainApp.controller("studentController",function($scope)
+{
+	$scope.student={
+		firstName:"test",lastName:"data",
+		fullName: function()
+		{
+			var studentObject;
+			studentObject=$scope.student;
+			return studentObject.firstName +" "+ studentObject.lastName;
+		}
+	};
+}
+		);
+</script>
+</body>
+</html>
